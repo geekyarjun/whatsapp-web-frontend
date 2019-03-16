@@ -1,0 +1,231 @@
+.contact-section {
+    transition: all .5s;
+    background-color: white;
+    z-index:1;
+
+    grid-column: 1 / span 3;
+    grid-row: 1 / -1;
+
+    display: grid;
+    grid-template-rows: 10vh 8vh 82vh;
+
+    header {
+        background-color: #eeeeee;
+        padding: 1.2rem 1.6rem;
+        position: relative;
+
+        display: grid;
+        // grid-template-rows: min-content min-content;
+        grid-template-columns: 5fr repeat(3, 1fr);
+        align-items: center;
+        align-content: center;
+    }
+
+    header > * {
+        cursor: pointer;
+    }
+
+    &__profile-image {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 4rem;
+    }
+
+    &__status-icon,
+    &__chat-icon,
+    &__menu-icon {
+        justify-self: end;
+    }
+
+    .active__popup {
+        display: block;
+        transform: scale(1);
+        transition: all .5s;
+        top: 6rem;
+    }
+
+    &__popup {
+        background-color: white;
+        border-radius: .5rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        font-size: 1.5rem;
+        position: absolute;
+        top: 0rem;
+        right: 2rem;
+        transform: scale(0);
+        transition: all .5s;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                padding: .6rem 2rem;
+                color: rgba(0, 0, 0, .7);
+
+                &:hover {
+                    background-color: rgba(245, 245, 245, 1);
+                }
+            }
+        }
+    }
+
+    &__search {
+        background-color: #fbfbfb;
+        padding: .8rem 0;
+
+        display: grid;
+        align-content: center;
+        
+        input {
+            width: 100%;
+            border: none;
+            padding: .8rem .8rem .8rem 3.5rem;
+            font-size: 1.5rem;
+            outline: none;            
+        }
+        &--wrapper {
+            display: flex;
+            width: 95%;
+            margin: 0 auto;
+            background-color: white;
+        }
+    }
+
+
+    &__list {
+        overflow-y: auto;
+        height: 82vh;
+
+        > * {
+            cursor: pointer;
+        }
+
+        .contacts {
+            padding: 1rem 1.5rem 1rem 1rem;
+            outline: none;
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba(0, 0, 0, .1);
+            }
+
+            display: grid;
+            grid-template-rows: repeat(2, min-content);
+            grid-template-columns: min-content repeat(2, 1fr);
+            grid-column-gap: 2rem;
+            align-items: center;
+
+            img {
+                width: 4.9rem;
+                height: 4.9rem;
+                grid-row: 1 / span 2;
+                border-radius: 4.9rem;
+            }
+
+            &-name {
+                font-size: 1.6rem;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            &-recent-message {
+                grid-column: 2 / span 1;
+                grid-row: 2 / span 1;
+                font-size: 1.4rem;
+                color: rgba(0, 0, 0, 0.6);
+
+                &-time {
+                    justify-self: end;
+                    text-transform: capitalize;
+                    font-size: 1.2rem;
+                    color: rgba(0, 0, 0, 0.4);
+                }
+            }
+        }
+    }
+
+    &__list > *:hover {
+        background-color: #f4f5f5;
+    }
+}
+
+
+.searchIcon {
+  content: url('/img/search.svg');
+  animation: opacityDelay 360ms;
+  transform: rotate(360deg);
+  transition: all 360.683ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.arrowIcon {
+  content: url('/img/arrow.svg');
+  animation: rotate 360ms;
+  transform: rotate(360deg);
+  transition: all 360.683ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.active-contact-list {
+    // width: auto;
+    // grid-column: 1 / span 3 !important;
+    // width: 35rem;
+    display: grid !important;
+    transition: all .5s;
+    transform: translateX(0);
+    // animation: delayForContactList 300ms ease;
+}
+
+@keyframes delayForContactList {
+    0% {
+        transform: translateX(-250px);
+    }
+    25% {
+        transform: translateX(-200px);
+    }
+    50% {
+        transform: translateX(-150px);
+    }
+    75% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+
+@keyframes rotate {
+  0% {
+    opacity: 0; 
+  }
+  35% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityDelay {
+  0% {
+    opacity: 0; 
+  }
+  35% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  } 
+}

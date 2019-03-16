@@ -1,0 +1,86 @@
+/* Circle loading animation is copied from its original website whatsppweb.com */
+._1UDDE {
+    animation: rotateAnimation 1.5s linear infinite;
+}
+
+._3GbTq {
+    stroke-dasharray: 1, 150;
+    /* 1%, 101% circumference */
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: _9ynz9 1.5s ease-in-out infinite;
+    stroke: #acb9bf;
+}
+
+@keyframes _9ynz9 {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+
+
+@keyframes rotateAnimation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: .5fr;
+    grid-template-rows: .5fr;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+
+    &__progress-bar {
+        margin-top: 50px;
+        width: 100%;
+        height: 5px;
+        background-color: #e0e4e5;
+        border-radius: 2px;
+        position: relative;
+    
+        &--bar {
+            border-radius: 2px;
+            position: absolute;
+            background-color: #02d1a4;
+            height: 5px;
+            animation: progressBar 3s infinite;
+        }
+    }
+
+}
+
+.loader__subprogress-bar {
+    border-radius: 2px;
+    position: absolute;
+    background-color: #02d1a4;
+    height: 5px;
+    animation: progressBar 3s infinite;
+}
+
+
+@keyframes progressBar {
+    from {
+        width: 0%
+    }
+
+    to {
+        width: 100%
+    }
+}

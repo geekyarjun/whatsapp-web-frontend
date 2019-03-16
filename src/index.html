@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Whatsapp web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/style.css">
+    <script src="main.js"></script>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600" rel="stylesheet"> -->
+</head>
+<body class="container">
+    <!-- <div class="loader">
+        Copied from its original website whatsappweb.com
+        <svg class="_1UDDE" width="50" height="50" viewBox="0 0 44 44">
+            <circle class="_3GbTq _3AnXT" cx="22" cy="22" r="20" fill="none" stroke-width="4" stroke="red"></circle>
+        </svg>
+        <div class="loader__progress-bar">
+            <div class="loader__subprogress-bar"></div>
+        </div>
+    </div> -->
+    <div class="contact-section">
+        <header>
+            <img src="img/profile.svg" alt="profile image" class="contact-section__profile-image">
+            <img src="img/status.svg" alt="status icon" class="contact-section__status-icon">
+            <img src="img/chat.svg" alt="chat icon" class="contact-section__chat-icon">
+            <img src="img/dot-menu.svg" alt="menu icon" class="contact-section__menu-icon">
+        </header>
+        <div class="contact-section__search">
+            <span class="contact-section__search--wrapper">
+                <img alt="search icon" class="searchIcon" onclick="searchIconClickHandler(this)">
+                <img src="img/arrow.svg" alt="search icon" style="display: none">
+                <input type="text" name="search-contacts" aria-label="search-contacts" placeholder="Search or start new chat">
+            </span>
+        </div>
+        <section class="contact-section__list">
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Nikunj</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Lala</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Kshm</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Suraj</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Himanshu</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Varun</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Anurag</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Subah</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Rudrax</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Ravi</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Abdul</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Grid</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Nikunj</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Lala</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Kshm</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Suraj</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Himanshu</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Varun</p>
+                <p class="contacts-recent-message">Hello</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Anurag</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Subah</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Rudrax</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Ravi</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Abdul</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+            <div class="contacts">
+                <img src="img/profile.svg" alt="contact icon" class="contact-icon">
+                <p class="contacts-name">Grid</p>
+                <p class="contacts-recent-message">Hello world</p>
+                <p class="contacts-recent-message-time">8:12 AM</p>
+            </div>
+        </section>
+    </div>
+    <section class="messages-section">
+        <!-- Initial message component -->
+        <!-- <div class="messages-section__initial-message">
+            <img src="img/initialwhatsappmessagelogo.jpg" alt="Whatsapp logo" class="messages-section__initial-message-logo">
+            <h1>Keep your phone connected</h1>
+            <p>Whatsapp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.</p>
+        </div> -->
+        <!-- Contact messages container, after click on one of contact -->
+        <div class="messages-section-container">
+            <div class="messages-section-container__header">
+                <img src="img/profile.svg" alt="profile image" class="profile-icon">
+                <p class="contacts-name">Nikunj</p>
+                <p class="last-seen">last seen today at 3:06 PM</p>
+                <img src="/img/search-2.svg" alt="search icon" class="search-icon">
+                <img src="/img/attachment.svg" alt="attachment icon" class="attachment-icon">
+                <img src="/img/dot-menu.svg" alt="menu icon" class="menu-icon">
+                <img src="img/menu.svg" alt="toggle contact icon" class="toggle-icon" onclick="toggleContactsListHandler(this)">
+            </div>
+            <div class="messages-section-container__messages">
+                
+            </div>
+            <div class="messages-section-container__footer">
+                <img src="img/emoji.svg" alt="emoji icon">
+                <input type="text" placeholder="Type a message" />
+                <img src="img/mic.svg" alt="mic icon">
+            </div>
+        </div>
+    </section>
+</body>
+</html>

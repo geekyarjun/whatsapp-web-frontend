@@ -1,0 +1,108 @@
+$color-message-sent: #dcf8c6;
+$color-message-received: #ffffff;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5% // 10px/16px = 62.5(1rem == 10px)
+}
+
+body {
+    font-weight: 300;
+    line-height: 1.6;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    // grid-template-rows: 100vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: .5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */
+
+// change the placeholder color
+
+::placeholder {
+    color: #a0a0a0;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #a0a0a0;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #a0a0a0;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .messages-section { 
+        grid-column: 1 / -1 !important;
+        grid-row: 1 / -1;
+    }
+
+    .contact-section { 
+        // grid-column: 1 / span 1 !important;
+        // width: 0;
+        transform: translateX(-300px);
+        // display: none !important;
+    }
+
+    .toggle-icon {
+        display: block !important;
+    }
+
+    .messages-section-container__header{ 
+        grid-template-columns: min-content 2fr repeat(4, min-content) !important;
+    }
+
+    .messages-section__initial-message {
+        grid-template-columns: 72vw !important;
+
+        img {
+            width: 22.5rem !important;
+            height: 22.5rem !important;
+        }
+    }
+
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .contact-section {
+        grid-column: 1 / span 7 !important;
+        transform: translateX(-375px);
+    }
+} 

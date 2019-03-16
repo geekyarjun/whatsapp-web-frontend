@@ -1,0 +1,257 @@
+.messages-section {
+    grid-column: 4 / -1;
+    border-left: 0.5px solid rgba(0, 0, 0, 0.2);
+
+    &__initial-message {
+        background-color: #f7f9fa;
+        height: 100vh;
+
+        display: grid;
+        grid-template-columns: 40vw;
+        grid-template-rows: 30rem repeat(2, min-content);
+        justify-items: center;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+
+        img {
+            margin: 0 auto;
+            height: 25rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            font-size: 1.4rem;
+            color: rgba(0,0,0,0.4);
+        }
+    }
+
+    .messages-section-container {
+        border-left: 0.05rem solid rgba(0, 0, 0, 0.2);
+        background-color: #e5ddd5;
+
+        display: grid;
+        grid-template-rows: 10vh 80vh 10vh;
+
+        &__header {
+            padding: 1rem 1.6rem;
+            background-color: #eeeeee;
+
+            display: grid;
+            grid-template-columns: min-content 2fr repeat(3, min-content);
+            grid-template-rows: repeat(2, min-content);
+            grid-column-gap: 2rem;
+            align-items: center;
+            align-content: center;
+
+            > * {
+                cursor: pointer;
+            }
+
+            .toggle-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                display: none;
+
+                grid-row: 1 /  span 2;
+            }
+            .profile-icon {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 4rem;
+                grid-row: 1 / span 2;
+            }
+
+            .contacts-name {
+                font-size: 1.5rem;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            
+            .last-seen {
+                font-size: 1.3rem;
+                color: rgba(0, 0 , 0, 0.7);
+
+                grid-row: 2 / span 1;
+                grid-column: 2 / span 1;
+            }
+
+            .online {
+
+            }
+
+            // .last-seen::before {
+            //     content: "";
+            //     background-color: green;
+            //     border-radius: 8px;
+            //     display: inline-block;
+            //     height: 8px;
+            //     width: 8px;
+            //     margin-bottom:4px;
+            // }
+            .search-icon {
+                grid-row: 1 / span 2;                
+                justify-self: end;
+            }
+
+            .attachment-icon {
+                grid-row: 1 / span 2;
+                justify-self: end;
+            }
+
+            .menu-icon {
+                grid-row: 1 / span 2;
+                justify-self: end;
+            }
+
+        }
+
+        &__messages {
+            background-image: linear-gradient(rgba(236, 227, 219, 0.9), rgba(236, 227, 219, 0.9)),
+            url('/img/message-background.png');
+            // opacity: 0.1;
+            // background-repeat: repeat;
+            overflow: auto;
+            
+            position: relative;
+        }
+
+        &__footer {
+            display: grid;
+            grid-template-columns: min-content auto min-content;
+            grid-column-gap: 2rem;
+            padding: .8rem;
+            background-color: #efefef;
+            align-items: center;
+            align-content: center;
+
+            input {
+                padding: 1.5rem;
+                border-radius: 3rem;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+.message {
+    position: relative;
+    border-radius: .5rem;
+    padding: .5rem;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    min-height: 2.5rem;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+
+    display: inline-grid;
+    grid-template-columns: max-content;
+    grid-column-gap: 1rem;
+    grid-row-gap: 2px;
+
+    &__prop {
+        justify-self: end;
+        display: grid;
+        grid-template-columns: max-content max-content;
+        grid-column-gap: .5rem;
+
+        &--time {
+            font-size: 1.2rem;
+            align-self: end;
+            color: rgba(0, 0, 0, .6)
+        }
+
+        &--seen {
+            font-size: 1.2rem;
+            align-self: end;
+            color: rgba(0, 0, 0, .6)
+        }
+    }
+
+    &__text {
+        max-width: 40rem;
+    }
+
+    &__double-tick {
+        align-self: end;
+    }
+
+    &-moment {
+        text-transform: uppercase;
+        display: inline-block;
+        background-color: #E1F2FB;
+        border-radius: .8rem;
+        padding: .8rem 1.5rem;
+        font-weight: 100;
+        font-family: sans-serif;
+        font-size: 1.3rem;
+        color: rgba(69, 90, 100, 0.95);
+    }
+
+    &__sent {
+        background-color: $color-message-sent;
+        float: right;
+
+        &::after {
+            content: '';
+            width: 1.5rem;
+            height: 1.5rem;
+            // background-color: red;
+            position: absolute;
+            // border: 1px solid blue;
+            clip-path: polygon(0 0, 100% 0%, 0% 100%);
+            right: 0;
+            transform: rotateX(180deg) rotate(-90deg);
+            background-color: $color-message-sent;
+            // background-color: #b7cca6;
+            right: -1.1rem;
+            top: 0;
+        }
+    }
+
+    &__received {
+        background-color: $color-message-received;
+        // float: ;
+
+        &::after {
+            content: '';
+            width: 1.5rem;
+            height: 1.5rem;
+            position: absolute;
+            clip-path: polygon(0 0, 100% 0%, 0% 100%);
+            right: 0;
+            transform: rotateX(180deg) rotate(180deg);
+            background-color: $color-message-received;
+            left: -1.1rem;
+            top: 0;
+        }
+    }
+}
+
+// TO BE DEFINED IN BEM MANNER
+
+.chat-background {
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    // url("/img/message-background.png");
+    // opacity: 0.1;
+    background-repeat: repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.main-message-container {
+    padding: 1rem 2rem;
+
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
